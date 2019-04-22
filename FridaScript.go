@@ -1,4 +1,4 @@
-package main
+package gofrida
 
 /*
 #include "frida-core.h"

@@ -1,4 +1,4 @@
-package main
+package gofrida
 
 type FridaApplication struct{
 	Identifier string
