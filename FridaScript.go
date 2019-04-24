@@ -35,10 +35,8 @@ func  on_message(script *C.FridaScript,message *C.gchar,data *C.GBytes,user_data
 		pbuf:=g_bytes_get_data(uintptr(unsafe.Pointer(data)),&nsize)
 		gobytes=C.GoBytes(unsafe.Pointer(pbuf),C.int(nsize))
 	}
-
 	f:=fv.(func(_script *FridaScript,_message map[string]interface{},_data []byte,_userdata uintptr))
 	f(FridaScriptFormPtr(uintptr(unsafe.Pointer(script))),jsobj,gobytes,uintptr(unsafe.Pointer(user_data)))
-
 }
 
 type FridaScript struct{
